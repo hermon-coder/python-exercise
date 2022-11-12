@@ -1,6 +1,7 @@
 import random
 import re
 from icecream import install
+
 install()
 
 
@@ -36,26 +37,45 @@ def playGame(a, b):
         input(f"Player A throw your {i} dice")
         a.append(throwDice())
 
-
         ic(a)
         input(f"Player B throw your {i} dice")
         b.append(throwDice())
         ic(b)
 
     if extendedSum(a) > extendedSum(b):
-        return "A has won with: " + str(extendedSum(a)) + ", and B scored: " + str(extendedSum(b))
+        return (
+            "A has won with: "
+            + str(extendedSum(a))
+            + ", and B scored: "
+            + str(extendedSum(b))
+        )
     elif extendedSum(a) < extendedSum(b):
-        return "B has won with: " + str(extendedSum(b)) + ", and A  scored: " + str(extendedSum(a))
+        return (
+            "B has won with: "
+            + str(extendedSum(b))
+            + ", and A  scored: "
+            + str(extendedSum(a))
+        )
     else:
-        while(extendedSum(a) == extendedSum(b)):
+        while extendedSum(a) == extendedSum(b):
             a.append(throwDice())
             b.append(throwDice())
         if extendedSum(a) > extendedSum(b):
-            return "A has won with: " + str(extendedSum(a)) + ", and B scored: " + str(extendedSum(b))
+            return (
+                "A has won with: "
+                + str(extendedSum(a))
+                + ", and B scored: "
+                + str(extendedSum(b))
+            )
         else:
-            return "B has won with: " + str(extendedSum(b)) + ", and A  scored: " + str(extendedSum(a))
+            return (
+                "B has won with: "
+                + str(extendedSum(b))
+                + ", and A  scored: "
+                + str(extendedSum(a))
+            )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     registerPlayers()
     ic(playGame(a=[], b=[]))
