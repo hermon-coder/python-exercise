@@ -8,13 +8,13 @@ install()
 # we need to make this dynamic and pretty
 def printLeaderBoard(a, b):
     print("======Leader Boaroad =========")
-    print(f"====Player A || Player B=====")
+    print(f"==== {a} || {b} =====")
     print("==============================")
 
 
 def registerPlayers():
-    playerA = input("What is your name? ")
-    playerB = input("What is your name? ")
+    playerA = input("What is player One's name? ")
+    playerB = input("What is player Two's name? ")
     printLeaderBoard(playerA, playerB)
     return (playerA, playerB)
 
