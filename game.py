@@ -27,8 +27,7 @@ def extendedSum(a):
     aa = sum(a)
     if aa % 2 == 0:
         return aa + 10
-    else:
-        return aa + 5
+    return aa + 5
 
 
 def playGame(a, b):
@@ -67,8 +66,8 @@ def playGame(a, b):
                 + ", and B scored: "
                 + str(extendedSum(b))
             )
-        else:
-            return (
+
+        return (
                 "B has won with: "
                 + str(extendedSum(b))
                 + ", and A  scored: "
